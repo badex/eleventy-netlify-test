@@ -9,5 +9,16 @@
 <body>
     <h1>Eleventy + Netlify CMS Blog Example</h1>
     {{ content | safe }}
+    <script>
+    if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", user => {
+        if (!user) {
+            window.netlifyIdentity.on("login", () => {
+            document.location.href = "/admin/";
+            });
+        }
+        });
+    }
+    </script>
 </body>
 </html>
