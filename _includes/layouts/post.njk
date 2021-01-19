@@ -1,0 +1,9 @@
+---
+layout: layouts/base.njk
+---
+
+<h2>{{ title }}</h2>
+
+<img src="{{ featuredImage.imgSrc | url }}" alt="{{ featuredImage.imgAlt }}" />
+
+{{ content | safe }}
