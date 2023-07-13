@@ -1,0 +1,112 @@
+{% for section in collections.sections %}
+{% if section.data.id == 'sectionServices' %}
+<section class="section-specialities section-services" id="sectionServices" aria-labelledby="specialities-title">
+    <div class="container flow">
+      <h3 id="specialities-title" class="section-title">{{ section.data.title }}</h3>
+        {{ section.templateContent | safe }}
+      <div class="grid-services">
+        <div class="service">
+          <div class="service__img-wrap">
+            <img src="{% src 'flower-of-life-galaxy-2013x1131_wigbvz.jpg' %}"
+            srcset="{% srcset 'flower-of-life-galaxy-2013x1131_wigbvz.jpg' %}"
+            sizes="(min-width: 1520px) 409px, (min-width: 1200px) 445px, (min-width: 960px) calc(14.09vw + 279px), (min-width: 780px) calc(20.63vw + 163px), (min-width: 480px) calc(100vw - 96px), calc(95vw - 25px)"
+            alt="Flower Of Life Geometric Pattern"
+            width="671"
+            height="377"
+            loading="lazy"
+            class="service__img"
+          >
+          </div>
+          <div class="service__text-wrap flow">
+            <h4 class="service__title h4">Energy Healing</h4>
+            <p class="service__description">
+              Kundalini Reiki, Tera Mai Reiki and Pranic Healing.
+            </p>
+          </div>
+        </div>
+
+        <div class="service">
+          <div class="service__img-wrap">
+            <img src="{% src 'mindful-blue-lotus-2013x1131_u4jtue.jpg' %}"
+            srcset="{% srcset 'mindful-blue-lotus-2013x1131_u4jtue.jpg' %}"
+            sizes="(min-width: 1520px) 409px, (min-width: 1200px) 445px, (min-width: 960px) calc(14.09vw + 279px), (min-width: 780px) calc(20.63vw + 163px), (min-width: 480px) calc(100vw - 96px), calc(95vw - 25px)"
+            alt="Blue Lotus flower with galaxy behind."
+            width="671"
+            height="377"
+            loading="lazy"
+            class="service__img"
+          >
+          </div>
+          <div class="service__text-wrap flow">
+            <h4 class="service__title h4">Mindful Intuitive Coaching</h4>
+            <p class="service__description">
+              Energetic guidance to help you move forward in life. Mindful, intuitive and energetic coaching.
+            </p>
+          </div>
+        </div>
+        <div class="service">
+          <div class="service__img-wrap">
+            <img src="{% src 'theta-healing-2013x1131_ebyqq8.jpg' %}"
+            srcset="{% srcset 'theta-healing-2013x1131_ebyqq8.jpg' %}"
+            sizes="(min-width: 1520px) 409px, (min-width: 1200px) 445px, (min-width: 960px) calc(14.09vw + 279px), (min-width: 780px) calc(20.63vw + 163px), (min-width: 480px) calc(100vw - 96px), calc(95vw - 25px)"
+            alt="Theta healing illustration."
+            width="671"
+            height="377"
+            loading="lazy"
+            class="service__img"
+          >
+          </div>
+          <div class="service__text-wrap flow">
+            <h4 class="service__title h4">Emotional Freedom Technique</h4>
+            <p class="service__description">
+              A form of self-acupressure and self-hypnosis that is taught
+              as a very effective tool which helps with easing anxiety and
+              traumas and facilatates changing of vibration.
+            </p>
+          </div>
+        </div>
+        <div class="service">
+          <div class="service__img-wrap">
+            <img src="{% src 'singing-bowl-in-snowscape-2013x1131_bja2v4.jpg' %}"
+            srcset="{% srcset 'singing-bowl-in-snowscape-2013x1131_bja2v4.jpg' %}"
+            sizes="(min-width: 1520px) 409px, (min-width: 1200px) 445px, (min-width: 960px) calc(14.09vw + 279px), (min-width: 780px) calc(20.63vw + 163px), (min-width: 480px) calc(100vw - 96px), calc(95vw - 25px)"
+            alt="Tibetan Meditation Bowl with snow in the background."
+            width="671"
+            height="377"
+            loading="lazy"
+            class="service__img"
+          >
+          </div>
+          <div class="service__text-wrap flow">
+            <h4 class="service__title h4">Sound Healing</h4>
+            <p class="service__description">
+              Sound Bath - vibrational Therapy with Tibetan Singing
+              Bowls.
+            </p>
+          </div>
+        </div>
+        <div class="service">
+          <div class="service__img-wrap">
+            <img src="{% src 'aromatherapy-2013x1131_qpfamj.jpg' %}"
+            srcset="{% srcset 'aromatherapy-2013x1131_qpfamj.jpg' %}"
+            sizes="{% defaultSizes %}"
+            alt="Woman holding aromatherapy oils."
+            width="671"
+            height="377"
+            loading="lazy"
+            class="service__img"
+          >
+          </div>
+          <div class="service__text-wrap flow">
+            <h4 class="service__title h4">Aromatherapy</h4>
+            <p class="service__description">
+              Aromatherapy, Therapeutic Massage and advice on oil
+              usage.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  {% endif %}
+  {% endfor %}

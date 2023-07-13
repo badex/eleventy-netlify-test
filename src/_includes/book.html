@@ -1,0 +1,22 @@
+{% for section in collections.sections %}
+{% if section.data.id == 'sectionBook' %}
+<section id="sectionBook" class="section-book" aria-labelledby="book-title">
+    <div class="container flow book">
+      <div class="grid-book">
+        <div class="flow">
+          <h3 id="book-title">{{ section.data.title }}</h3>
+            {{ section.templateContent | safe }}
+        </div>
+        <!-- Calendly inline widget begin -->
+        <!-- <div class="calendly-inline-widget" data-url="https://calendly.com/resonancehealingireland/30min?hide_gdpr_banner=1&background_color=50305b&text_color=f9f6f9&primary_color=ffffff" ></div>
+      <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script> -->
+        <!-- Calendly inline widget end -->
+        <!-- Calendly inline widget begin -->
+        <div class="calendly-inline-widget" data-url="https://calendly.com/resonancehealingireland/30min?hide_gdpr_banner=1&background_color=50305b&text_color=f9f6f9&primary_color=ffffff" data-processed="true" style="position: relative;"><div class="calendly-spinner"><div class="calendly-bounce1"></div><div class="calendly-bounce2"></div><div class="calendly-bounce3"></div></div><iframe src="https://calendly.com/resonancehealingireland/30min?embed_domain=localhost&embed_type=Inline&hide_gdpr_banner=1&background_color=50305b&text_color=f9f6f9&primary_color=ffffff" title="book a session"></iframe></div>
+       
+        <!-- Calendly inline widget end -->
+      </div>
+    </div>
+  </section>
+  {% endif %}
+  {% endfor %}

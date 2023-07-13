@@ -1,0 +1,47 @@
+<footer class="footer-page">
+  <div class="container grid">
+    <ul class="social-list flex">
+      <li class="social-list__item">
+        <a
+          href="{{siteSettings.facebook}}"
+          class="social-list__link"
+          ><span class="sr-only">Facebook</span>
+          <svg class="icon-facebook social-list__icon" aria-hidden="true">
+            <use
+              xlink:href="#icon-facebook"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+            ></use></svg
+        ></a>
+      </li>
+      <li class="social-list__item">
+        <a
+          href="{{siteSettings.instagram}}"
+          class="social-list__link"
+          ><span class="sr-only">Instagram</span>
+          <svg class="icon-instagram social-list__icon" aria-hidden="true">
+            <use
+              xlink:href="#icon-instagram"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+            ></use></svg
+        ></a>
+      </li>
+    </ul>
+    <a href="#top" class="top-link"
+      ><span class="sr-only">Back to top</span>
+      <svg class="icon-circle-up" aria-hidden="true">
+        <use
+          xlink:href="#icon-circle-up"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+        ></use>
+      </svg>
+    </a>
+  </div>
+  <div class="bottom-bar">
+    <div class="container">
+      <p class="copyright">
+        © {{siteSettings.site_name}}
+        <span class="copyright__year">{% year %}</span>
+      </p>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,22 @@
+{% for section in collections.sections %}
+{% if section.data.id == 'sectionIntro' %}
+<section aria-labelledby="intro-title" id="sectionIntro">
+    <div class="container flow intro">
+      <h3 id="intro-title" class="section-title">
+        {{ section.data.title }}
+      </h3>
+      <div class="profile grid-intro">
+
+
+          <img src="{% src 'therese-ryan-website-portrait-818x1091_fat2ij.jpg', 409 %}" srcset="{% srcsetX 'therese-ryan-website-portrait-818x1091_fat2ij.jpg', 409, 2 %}" alt="Therese Ryan Holistic Therapist" width="409" height="546" class="profile__image profile__image--2 framed-shadow" loading="lazy">
+
+        <div class="flow profile__text-container">
+            <img src="{% src 'therese-ryan-website-portrait-818x1091_fat2ij.jpg', 151 %}" srcset="{% srcsetX 'therese-ryan-website-portrait-818x1091_fat2ij.jpg', 151, 2 %}" alt="Therese Ryan Holistic Therapist" class="profile__image framed-shadow" width="151" height="201" loading="lazy">
+
+          {{ section.templateContent | safe }}
+        </div>
+      </div>
+    </div>
+  </section>
+  {% endif %}
+  {% endfor %}

@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}{% endblock %}
+    {% include "base-head-content.html" %}
+</head>
+<body>
+    {% block content %}
+    {{ content | safe }}
+    {% endblock %}
+    {% block endscripts %}{% endblock %}
+</body>
+</html>

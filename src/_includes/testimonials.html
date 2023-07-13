@@ -1,0 +1,47 @@
+{% for section in collections.sections %}
+{% if section.data.id == 'sectionTestimonials' %}
+<section
+id="sectionTestimonials"
+class="section-testimonials"
+aria-labelledby="testimonials-title"
+>
+<div class="container flow testimonials">
+  <h3 id="testimonials-title" class="section-title">
+    {{ section.data.title }}
+  </h3>
+<div class="glider-contain multiple">
+    <button class="glider-prev">
+      <span class="sr-only">Previous</span>
+      <svg class="icon-left-round-arrow" aria-hidden="true">
+        <use
+          xlink:href="#icon-left-round-arrow"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+        ></use>
+      </svg>
+    </button>
+<div class="glider">
+{% for testimonial in collections.testimonials  %}
+<figure>
+    <blockquote>{{ testimonial.templateContent | safe }}</blockquote>
+
+    <figcaption>{{ testimonial.data.name }}, <span>{{ testimonial.data.location }}</span>
+        <span>{{ testimonial.data.work }}</span>
+    </figcaption>
+</figure>
+{% endfor %}
+</div>
+<button class="glider-next">
+  <span class="sr-only">Next</span>
+  <svg class="icon-right-round-arrow" aria-hidden="true">
+    <use
+      xlink:href="#icon-right-round-arrow"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+    ></use>
+  </svg>
+</button>
+<div class="glider-dots" id="dots"></div>
+</div>
+</div>
+</section>
+{% endif %}
+{% endfor %}

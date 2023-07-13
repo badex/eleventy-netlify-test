@@ -1,0 +1,46 @@
+{% for section in collections.sections %}
+{% if section.data.id == 'sectionContact' %}
+<section id="sectionContact" class="section-message section-contact" aria-labelledby="contact-title">
+    <div class="container flow">
+      <div class="grid-contact">
+        <h3 id="contact-title" class="contact-title">{{ section.data.title }}</h3>
+        <form class="form-contact flow" id="formContact" action="/" method="post" netlify-honeypot="bot-field" data-netlify="true">
+          <label for="hp" class="sr-only hp">
+            <span>Don’t fill this out if you're human:</span>
+            <input type="text" class="form-contact__hp" id="hp" name="bot-field" />
+          </label>
+          <label for="name">
+            <span>Name:</span>
+            <input type="text" class="form-contact__name" id="name" name="name" placeholder="Full Name" required="" autocomplete="name">
+          </label>
+          <label for="email">
+            <span>Email:</span>
+            <input type="email" class="form-contact__email" id="email" name="email" placeholder="email@example.com" required="" autocomplete="email">
+          </label>
+          <label for="message">
+            <span>Message:</span>
+            <textarea name="message" id="message" class="form-contact__textarea" cols="30" rows="10" placeholder="Your message…" required=""></textarea>
+          </label>
+          <button class="btn btn-ripple form__submit" type="submit" >
+            Send
+          </button>
+        </form>
+
+        <div class="contact-submit-message"><p></p></div>
+        <div class="contact-info">
+            {{ section.templateContent | safe }}
+
+          <p class="detail">
+            <a href="tel:{{siteSettings.contact.telephone.telephone_link}}" class="contact-list__link"><svg class="icon-phone detail__icon" aria-hidden="true">
+                <use xlink:href="#icon-phone" xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg><span class="sr-only">Telephone:</span><span class="dont-break-out">{{siteSettings.contact.telephone.telephone_number}}</span></a>
+          </p>
+          <p class="detail">
+            <a href="mailto:{{siteSettings.contact.email}}" class="contact-list__link"><svg class="icon-email detail__icon" aria-hidden="true">
+                <use xlink:href="#icon-email" xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg><span class="sr-only">Email</span><span class="dont-break-out">{{siteSettings.contact.email}}</span></a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  {% endif %}
+  {% endfor %}

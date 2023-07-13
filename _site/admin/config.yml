@@ -1,0 +1,51 @@
+backend:
+  name: git-gateway
+  branch: main
+  repo: badex/resonance-healing-ireland
+media_folder: _site/img/uploads
+public_folder: /img/uploads
+collections:
+ - name: "section"
+   label: "Sections"
+   folder: "src/sections" # The path to the folder where the documents are stored
+   create: false # Allow users to create new documents in this collection
+   fields: # The fields for each document, usually in front matter
+     - {label: "Section Title", name: "title", widget: "string"}
+     - {label: "Section ID, (no spaces & must start with a letter, e.g. sectionMission)", name: "id", widget: "string"}
+     - {label: "Site Menu Name", name: "menuName", widget: "string"}
+     - {label: "Order, (lowest number appears 1st)", name: "order", widget: "number"}
+     - {label: 'Section content', name: 'body', widget: 'markdown' }
+ - name: "service"
+   label: "Services"
+   folder: "src/services" # The path to the folder where the documents are stored
+   create: false # Allow users to create new documents in this collection
+   fields: # The fields for each document, usually in front matter
+     - {label: "Service Title", name: "title", widget: "string"}
+     - {label: "Order, (lowest number appears 1st)", name: "order", widget: "number"}
+     - {label: 'Service content', name: 'body', widget: 'markdown'}
+ - name: "testimonial"
+   label: "Testimonials"
+   folder: "src/testimonials" # The path to the folder where the documents are stored
+   create: true # Allow users to create new documents in this collection
+   fields: # The fields for each document, usually in front matter
+     - {label: "Name", name: "name", widget: "string"}
+     - {label: "Location", name: "location", widget: "string"}
+     - {label: "Work", name: "work", widget: "string"}
+     - {label: 'Testimonial content', name: 'body', widget: 'markdown'}
+ - name: "settings"
+   label: "Site Settings"
+   description: "General site settings"
+   file: "src/_data/siteSettings.json"
+   delete: false # Prevent users from deleting documents in this collection
+   editor:
+      preview: false
+   fields:
+    - {label: "Site Title", name: "site_name", widget: "string"}
+    - {label: "Site Tagline", name: "tagline", widget: "string"}
+    - {label: "Site Description", name: "site_description", widget: "string"}
+    - {label: "Telephone No.", name: "telephone_number", widget: "string"}
+    - {label: "Telephone Link", name: "telephone_link", widget: "string"}
+    - {label: "Email", name: "email", widget: "string"}
+    - {label: "Facebook", name: "facebook", widget: "string"}
+    - {label: "Instagram", name: "instagram", widget: "string"}
+    - {label: "Call to Action Button Text", name: "cta_btn_txt", widget: "string"}

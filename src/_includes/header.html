@@ -1,0 +1,91 @@
+<header class="header-page">
+  <a href="#sectionMission" class="skip-link">Skip to content</a>
+  <nav
+    id="pageNav"
+    class="page-nav page-nav--large"
+    title="Primary Page Navigation"
+  >
+    <div class="flex container">
+      <a href="/" class="page-nav__site-link flex">
+        <span class="sr-only">{{siteSettings.site_name}} - Home</span>
+        <img
+          src="{% src 'resonance-healing-ireland-logo-orbs_dasrzp.svg' %}"
+          class="page-nav__logo"
+          alt=""
+        />
+      </a>
+      <a href="#top" class="page-nav__top-link">
+        <span>Top</span>
+        <svg class="icon" width="20" height="20">
+          <use
+            xlink:href="#icon-triangle-up"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+          ></use>
+        </svg>
+      </a>
+      <span class="page-nav__menu-descriptor" aria-hidden="true"
+        >Section Menu:</span
+      >
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        aria-label="Page Section Menu"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        <span class="sr-only">Main Menu</span>
+        <span class="menu-toggle__hamburger"></span>
+      </button>
+      <ul class="page-nav__list flex" id="pageNavList">
+        {%- for section in collections.sections -%}
+        {%- if (section.data.menu) -%}
+        <li class="page-nav__item">
+          <a class="page-nav__link" href="#{{section.data.id}}">
+            <svg class="icon page-nav__icon">
+              <use xlink:href="#icon-{{section.data.menuName | slugify }}"></use>
+            </svg>
+            <span>{{section.data.menuName}}</span>
+          </a>
+        </li>
+        {%- endif -%}
+        {%- endfor -%}
+      </ul>
+    </div>
+  </nav>
+  <nav id="dotNav" class="dot-nav" tabindex="-1" aria-hidden="true">
+    <ul class="dot-nav__list flex">
+      {%- for section in collections.sections -%}
+      {%- if (section.data.menu) -%}
+      <li class="dot-nav__item">
+        <a class="dot-nav__link" href="#{{section.data.id}}" tabindex="-1"
+          ><span class="sr-only">{{section.data.menuName}}</span></a
+        >
+      </li> 
+      {%- endif -%}
+      {%- endfor -%}
+    </ul>
+  </nav>
+  <div class="container branding grid-branding">
+    <div class="branding__header-text grid-branding-text">
+      <h1 class="h1">{{siteSettings.site_name}}</h1>
+      <p class="tagline">Empowerment, Guidance &amp; Support</p>
+      <!-- Calendly link widget begin -->
+      <link
+        href="https://assets.calendly.com/assets/external/widget.css"
+        rel="stylesheet"
+      />
+      <script
+        src="https://assets.calendly.com/assets/external/widget.js"
+        async=""
+      ></script>
+      <button
+        id="booking"
+        class="btn btn-cta"
+        onclick="Calendly.initPopupWidget({url: 'https://calendly.com/resonancehealingireland/30min?hide_gdpr_banner=1&amp;background_color=50305b&amp;text_color=f9f6f9&amp;primary_color=ffffff'});return false;"
+      >
+        {{siteSettings.cta_btn_text}}
+      </button>
+      <!-- Calendly link widget end -->
+    </div>
+  </div>
+</header>

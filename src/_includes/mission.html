@@ -1,0 +1,23 @@
+{% for section in collections.sections %}
+{% if section.data.id == 'sectionMission' %}
+<div class="container mission grid-mission flow" id="sectionMission">
+    <h2 class="h2">
+      {{ section.data.title }}
+    </h2>
+    <div>
+        {{ section.templateContent | safe }}
+    </div>
+    <picture>
+      <source srcset="{% srcset 'singing-bowl-landscape.jpg', [364, 727, 1454]  %}"
+      sizes="(min-width: 1520px) 419px, (min-width: 980px) calc(2.5vw + 257px), (min-width: 940px) calc(190vw - 1550px), (min-width: 780px) calc(15.71vw + 91px), (min-width: 480px) calc(100vw - 98px), calc(95vw - 27px)"
+      media="(max-width: 767px)" width="727" height="333">
+
+      <source srcset="{% srcsetX 'singing-bowl-1227%E2%80%8A-1053.jpg', 409, 2 %}"
+
+      width="409" height="351" media="(min-width: 768px)">
+      <img src="https://res.cloudinary.com/dvjjgcmow/image/upload/v1688680592/rhi/singing-bowl-409-351_soveyg.jpg" alt="Tibetan Singing Bowls" class="mission__image mission__image--2 framed-shadow" loading="lazy">
+    </picture>
+  </div> 
+{% endif %}
+{% endfor %}
+
